@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Validações Pendentes</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="list-group">
+                <a class="list-group-item"
+                    ng-repeat="validacao in validacoes"
+                    ng-click="onSelect(validacao)"
+                    ng-class="{active: selectedValidacao==validacao}">
+                    {{validacao.name}}
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-6" ng-if="selectedValidacao">
+            <h4>{{selectedValidacao.name | uppercase}} is my validacao</h4>
+            <p>ID: {{selectedValidacao.id}}</p>
+            <button ng-click="gotoDetail()" type="button" class="btn btn-primary">Edit</button>
+        </div>
+    </div>
+</div>
